@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pantry Pride</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- Background Image (VALID IMAGE URL) -->
+  <style>
+    body {
+      background-image: url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1920&q=80");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+  </style>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- FILM GRAIN -->
+  <div class="grain-layer"></div>
+
+  <!-- APP -->
+  <main class="app">
+
+    <header class="hero">
+      <h1>Pantry Pride</h1>
+      <p>Global chefs • Viral flavours • Your kitchen</p>
+    </header>
+
+    <section class="search-zone">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search dishes, cuisines, vibes..."
+      />
+      <button id="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+    </section>
+
+    <div id="error-container" class="hidden"></div>
+    <div id="result-heading"></div>
+
+    <section id="meals" class="meals-grid"></section>
+
+    <section id="meal-details" class="hidden details-glass">
+      <button id="back-btn">← Back</button>
+      <div class="meal-details-content"></div>
+    </section>
+
+  </main>
+
+  <!-- SAFE PARALLAX EFFECT -->
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 6;
+      const y = (e.clientY / window.innerHeight - 0.5) * 6;
+      document.body.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+    });
+  </script>
+
+  <!-- Your existing JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
